@@ -1,0 +1,66 @@
+<snippet>
+	<content><![CDATA[
+
+\$response = strtolower(\$_POST['response']);
+\$returnID = \$_POST['returnID'];
+
+switch(\$response) {
+
+case 'delete':
+
+	\$${1:thing}Delete =& \$fm->newDeleteCommand('web_${1:thing}_delete', \$_POST['recid']);
+	\$${1:thing}Deleteresult = \$${1:thing}Delete->execute();
+	if (FileMaker::isError(\$${1:thing}Deleteresult)) {
+		\$error = "Error: " . \$${1:thing}Deleteresult->getMessage() . "\n";
+		exit;
+	}
+
+break;
+
+case 'save':
+
+	\$${1:thing}Edit = & \$fm->newEditCommand('web_${1:thing}_edit', \$_POST['recid']);
+	\$${1:thing}Edit->setField('${2:field}', \$_POST['${3:criteria}']);
+	\$${1:thing}Edit->setField('rt_Modification', \$userName);
+	\$${1:thing}Edit->setField('rt_ModificationInternetID', \$userID);
+	\$${1:thing}Editresult = \$${1:thing}Edit->execute();
+	if (FileMaker::isError(\$${1:thing}Editresult)) {
+		\$error= "Error: " . \$${1:thing}Editresult->getMessage() . "\n";
+		exit;
+	}
+
+break;
+
+case 'add':
+
+	\$${1:thing}Add =& \$fm->newAddCommand('web_${1:thing}_add');
+	\$${1:thing}Add->setField('${4:field}', \$_POST['${5:criteria}']);
+	\$${1:thing}Add->setField('${6:field}', \$_POST['${7:criteria}']);
+	\$${1:thing}Add->setField('rt_Creation', \$userName);
+	\$${1:thing}Add->setField('rt_CreationInternetID', \$userID);
+	\$${1:thing}Add->setField('rt_Modification', \$userName);
+	\$${1:thing}Add->setField('rt_ModificationInternetID', \$userID);
+	\$${1:thing}Addresult = \$${1:thing}Add->execute();
+	if (FileMaker::isError(\$${1:thing}Addresult)) {
+		\$error = "Error: " . \$${1:thing}Addresult->getMessage() . "\n";
+		exit;
+	}
+	\$records = \$${1:thing}Addresult->getRecords();
+	\$record = \$records[0];
+	\$${1:thing}ID = \$record->getField('${8:key}');
+	
+break;
+
+default:
+
+break;
+
+}
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>response</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

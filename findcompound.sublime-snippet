@@ -1,0 +1,31 @@
+<snippet>
+	<content><![CDATA[
+//COMPOUND FIND
+\$${1:thing}Find =& \$fm->NewCompoundFindCommand('web_${1:thing}');
+\$i = 0;
+foreach (\$${1:thing}Array as \$val) {
+	\$i++;
+	\${'req' . \$i} =& \$fm->newFindRequest('web_${1:thing}');
+	\${'req' . \$i} ->addFindCriterion('${2:findfield}', \$val);
+	\$${1:thing}Find->add(\$i, \${'req' . \$i});
+}
+\$${1:thing}Find->setRange(0,\$${1:thing}Max);
+\$${1:thing}Find->addSortRule('${3:sortfield}', 1, FILEMAKER_SORT_ASCEND);
+\$${1:thing}Findresult = \$${1:thing}Find->execute();
+if (FileMaker::isError(\$${1:thing}Findresult)) {
+	\$${1:thing}Error = \$${1:thing}Findresult->getMessage();
+	\$${1:thing}Found = 0;
+	\$${1:thing}Match = "No";
+ } else {
+	\$${1:thing}s = \$${1:thing}Findresult->getRecords();
+	\$${1:thing} = \$${1:thing}s[0];
+	\$${1:thing}Found = \$${1:thing}Findresult->getFoundSetCount();
+	\$${1:thing}Match = "Yes";
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>findcompound</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+\$layoutName = "web_${1:layout_name}";
+\$scriptName = "web_${2:script_name}";
+\$parameter = "123";
+
+//RUN ${3:thing}
+\$${3:thing}Run =& $fm->newPerformScriptCommand(\$$layoutName, \$$scriptName, \$$parameter);
+\$${3:thing}Runresult = \$${3:thing}Run->execute();
+if (FileMaker::isError(\$${3:thing}Runresult)) {
+	\$${3:thing}Error = \$${3:thing}Runresult->getMessage();
+	\$${3:thing}Work = "No";
+} else {
+	\$${3:thing}Work = "Yes";
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+<tabTrigger>runscript</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

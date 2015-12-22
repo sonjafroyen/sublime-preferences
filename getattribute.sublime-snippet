@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+foreach (\$${1:thing}s as \$${1:thing}) {
+	\$array[] = array (
+		'${2:id}' => \$${1:thing}->getField('${3:idfield}'),
+		'${4:att}' => \$${1:thing}->getField('${5:attributefield}')
+	);
+}
+
+function get_${4:att}(\$${2:id}, \$array) {
+   foreach (\$array as \$key => \$val) {
+       if (\$val['${2:id}'] === \$${2:id}) {
+           return \$val['${4:att}'];
+       } 
+   }
+}
+
+get_${4:att}(\$${2:id}, \$array);
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>getattribute</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

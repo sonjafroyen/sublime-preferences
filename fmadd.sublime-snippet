@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+\$${1:thing}Add =& \$fm->newAddCommand('web_${1:thing}_add');
+\$${1:thing}Add->setField('${4:field}', \$_POST['${5:criteria}']);
+\$${1:thing}Add->setField('${6:field}', \$_POST['${7:criteria}']);
+\$${1:thing}Add->setField('rt_Creation', \$userName);
+\$${1:thing}Add->setField('rt_CreationInternetID', \$userID);
+\$${1:thing}Add->setField('rt_Modification', \$userName);
+\$${1:thing}Add->setField('rt_ModificationInternetID', \$userID);
+\$${1:thing}Addresult = \$${1:thing}Add->execute();
+if (FileMaker::isError(\$${1:thing}Addresult)) {
+	\$error = "Error: " . \$${1:thing}Addresult->getMessage() . "\n";
+	exit;
+}
+\$records = \$${1:thing}Addresult->getRecords();
+\$record = \$records[0];
+\$${1:thing}ID = \$record->getField('${8:key}');
+	
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fmadd</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

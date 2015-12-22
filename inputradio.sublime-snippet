@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+<div class="form-group">
+  <label>field3</label><br />
+    <label class="radio-inline"><input type="radio" id="Yes" name="field3" value="Yes">Yes</label>
+    <label class="radio-inline"><input type="radio" id="No" name="field3" value="No">No</label>
+</div>
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>inputradio</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

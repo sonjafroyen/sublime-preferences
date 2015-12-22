@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+
+<!-- Add enctype="multipart/form-data" to the form input -->
+<div class="form-group">
+  <label for="doc1">File input</label>
+  <input type="file" id="doc1" name="doc1">
+  <p class="help-block">Example block-level help text here.</p>
+</div>
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>inputfile</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

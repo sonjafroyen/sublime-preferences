@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+require_once '${2:../}../shib_functions.php';
+require_once 'FileMaker.php';
+include '${2:../}includes/dbaccess_${1:database}.php';
+include '${2:../}includes/get-shib-values.php';
+include '${2:../}includes/validate_access_to_app.php';
+include '${2:../}includes/settings.php';
+include '${2:../}functions.php';
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>filemaker</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

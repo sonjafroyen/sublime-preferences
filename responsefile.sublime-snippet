@@ -1,0 +1,39 @@
+<snippet>
+	<content><![CDATA[
+// GENERATE STRING OF CHARACTERS
+\$string = bin2hex(openssl_random_pseudo_bytes(13));
+
+if (\$_FILES['doc1']['error'] > 0) {
+      echo \$_FILES['doc1']['error'];
+    
+} else {
+
+	// CREATE FOLDER AND PUT FILE IN IT
+	// FOLDER SHOULD BE OWNED BY WWW
+	\$source = \$_FILES['doc1']['tmp_name'];
+	mkdir("docs/".\$${1:thing}ID, 0755);
+	mkdir("docs/".\$${1:thing}ID."/".\$string, 0755);
+	\$target = "docs/".\$${1:thing}ID."/".\$string."/".\$_FILES['doc1']['name'];
+	move_uploaded_file(\$source, \$target); // or die ("Couldn't copy doc from temp");
+
+	// GET INFORMATION ABOUT THE FILE
+	\$fileName = \$_FILES['doc1']['name'];
+	\$fileSize = \$_FILES['doc1']['size'];
+	\$fileType = \$_FILES['doc1']['type'];
+	\$folderPath = \$target;
+
+	// ADD MORE INFO TO DOCUMENT RECORD
+	\$documentEdit =& \$fm->newEditCommand('web_${1:thing}_add', \$recid);
+	\$documentEdit->setField('rt_FileName', \$fileName);
+	\$documentEdit->setField('rn_FileSize', \$fileSize);
+	\$documentEdit->setField('rt_FolderPath', \$folderPath);
+	\$documentEdit->setField('rt_FileType', \$fileType);
+	\$documentEditresult = \$documentEdit->execute();
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>responsefile</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

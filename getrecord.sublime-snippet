@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+\$recid = \$_POST['recid'];
+
+\$${1:thing} = \$fm->getRecordByID('web_${1:thing}_edit', \$recid);
+if (FileMaker::isError(\$${1:thing})) {
+ 	\$${1:thing}Error = \$${1:thing}->getMessage();
+ 	\$${1:thing}Match = "No";
+}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>getrecord</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

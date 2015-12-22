@@ -1,0 +1,41 @@
+<snippet>
+	<content><![CDATA[
+if(empty(\$_POST['response'])) {
+// DID NOT SUBMIT FORM SO SET VALUES TO DEFAULTS
+	\$first = "";
+	\$errorValues = array("");
+	\$error = false;
+
+} else {
+// SUBMITTED FORM SO PERFORM VALIDATIONS
+
+	// SET POST VALUES TO VARIABLES
+	foreach(\$_POST as \$key => \$value) { 
+		\${\$key} = \$value; 
+	}
+
+	\$error = false;
+	\$errorValues[] = "";
+	// VALIDATION #1
+	// if it fails
+	\$errorValues[] = "what-to-fix";
+	\$error = true;
+
+
+	if(\$error === false) {
+	// FORM IS VALID SO WRITE TO THE DATABASE
+
+
+		// SEND THEM BACK TO A GOOD PLACE
+		\$backURL = "Location:index.php";
+		header(\$backURL);
+
+	} // END IF ERROR
+
+} // END IF FORM SUBMITTED
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+<tabTrigger>john</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

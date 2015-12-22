@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+<div class="form-group">
+  <label>field4</label>
+  <select class="form-control" name="field4" id="field4">
+    <option value="singa">singa</option>
+    <option value="moona">moona</option>
+    <option value="juna">juna</option>
+    <option value="springa">springa</option>
+  </select>
+</div>
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>inputselect</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
