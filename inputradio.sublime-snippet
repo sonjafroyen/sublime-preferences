@@ -1,9 +1,9 @@
 <snippet>
 	<content><![CDATA[
 <div class="form-group">
-  <label>field3</label><br />
-    <label class="radio-inline"><input type="radio" id="Yes" name="field3" value="Yes">Yes</label>
-    <label class="radio-inline"><input type="radio" id="No" name="field3" value="No">No</label>
+	<label>${1:field}</label><br />
+	<label for="${1:field}Yes" class="radio-inline"><input type="radio" id="${1:field}Yes" name="${1:field}" value="Yes" <?php if(isset(\$_POST['${1:field}']) && \$_POST['${1:field}'] == "Yes") { echo "CHECKED"; } ?>>Yes</label>
+	<label for="${1:field}No" class="radio-inline"><input type="radio" id="${1:field}No" name="${1:field}" value="No" <?php if(isset(\$_POST['${1:field}']) && \$_POST['${1:field}'] == "No") { echo "CHECKED"; } ?>>No</label>
 </div>
 
 ]]></content>

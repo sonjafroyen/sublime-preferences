@@ -12,9 +12,9 @@ if (FileMaker::isError(\$${1:thing}Addresult)) {
 	\$error = "Error: " . \$${1:thing}Addresult->getMessage() . "\n";
 	exit;
 }
-\$records = \$${1:thing}Addresult->getRecords();
-\$record = \$records[0];
-\$${1:thing}ID = \$record->getField('${8:key}');
+\$${1:thing}s = \$${1:thing}Addresult->getRecords();
+\$${1:thing} = \$${1:thing}s[0];
+\$${1:thing}ID = \$${1:thing}->getField('${8:key}');
 	
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

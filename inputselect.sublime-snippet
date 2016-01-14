@@ -1,13 +1,13 @@
 <snippet>
 	<content><![CDATA[
 <div class="form-group">
-  <label>field4</label>
-  <select class="form-control" name="field4" id="field4">
-    <option value="singa">singa</option>
-    <option value="moona">moona</option>
-    <option value="juna">juna</option>
-    <option value="springa">springa</option>
-  </select>
+	<label for="${1:field}">${1:field}</label>
+	<select class="form-control" name="${1:field}" id="${1:field}">
+		<option value="singa" <?php if(isset(\$_POST['${1:field}']) && \$_POST['${1:field}'] == "singa") { echo "SELECTED"; } ?>>singa</option>
+		<option value="moona" <?php if(isset(\$_POST['${1:field}']) && \$_POST['${1:field}'] == "moona") { echo "SELECTED"; } ?>>moona</option>
+		<option value="juna" <?php if(isset(\$_POST['${1:field}']) && \$_POST['${1:field}'] == "juna") { echo "SELECTED"; } ?>>juna</option>
+		<option value="springa" <?php if(isset(\$_POST['${1:field}']) && \$_POST['${1:field}'] == "springa") { echo "SELECTED"; } ?>>springa</option>
+	</select>
 </div>
 
 ]]></content>

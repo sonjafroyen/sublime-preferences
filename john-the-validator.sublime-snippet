@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-if(empty(\$_POST['response'])) {
+if(empty(\$_POST)) {
 // DID NOT SUBMIT FORM SO SET VALUES TO DEFAULTS
 	\$first = "";
 	\$errorValues = array("");

@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+
+\$id = \$_POST['id'];
+\$att = \$_POST['att'];
+
+foreach(\$id as \$key => \$val) {
+	echo "The id is " . \$val . " and the attribute is " . \$att[\$key] . "!<br />";
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>arraypost</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

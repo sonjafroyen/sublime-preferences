@@ -1,8 +1,8 @@
 <snippet>
 	<content><![CDATA[
 <div class="form-group">
-    <label for="field1">field1</label>
-    <input type="text" class="form-control" id="field1" name="field1" value="" />
+	<label for="${1:field}">${1:field}</label>
+	<input type="text" class="form-control" id="${1:field}" name="${1:field}" value="<?php if(isset(\$_POST['${1:field}'])) { echo \$_POST['${1:field}']; } ?>" />
 </div>
 
 ]]></content>
