@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+echo "\n<strong>" . __FILE__ . " Line: " . __LINE__ . "</strong>\n";
+echo "\n<pre style=\"text-align:left; line-height:1.1em;\">\n";
+print_r( \$${1:array} );
+echo "\n</pre>\n";
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+<tabTrigger>pp</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

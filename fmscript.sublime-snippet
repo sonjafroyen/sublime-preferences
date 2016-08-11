@@ -5,7 +5,7 @@
 \$parameter = "123";
 
 //RUN ${3:thing}
-\$${3:thing}Run =& $fm->newPerformScriptCommand(\$layoutName, \$scriptName, \$parameter);
+\$${3:thing}Run = & \$fm->newPerformScriptCommand(\$layoutName, \$scriptName, \$parameter);
 \$${3:thing}Runresult = \$${3:thing}Run->execute();
 if (FileMaker::isError(\$${3:thing}Runresult)) {
 	\$${3:thing}Error = \$${3:thing}Runresult->getMessage();
@@ -15,7 +15,7 @@ if (FileMaker::isError(\$${3:thing}Runresult)) {
 }
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-<tabTrigger>runscript</tabTrigger>
+<tabTrigger>fmscript</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<!-- <scope>source.python</scope> -->
 </snippet>

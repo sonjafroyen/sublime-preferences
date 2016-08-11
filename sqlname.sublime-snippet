@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+substr (${1:alpha}.name, (instr(${1:alpha}.name, ',') + 1)) as rt_NameFirstMiddle,
+substr (${1:alpha}.name, 1, (instr(${1:alpha}.name, ',') - 1)) as rt_NameLast,
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+<tabTrigger>sqlname</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
