@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+<p style=$"color:#333333; font-size:15px; line-height:22px; font-weight:300; font-family:'Muli', sans-serif;$">
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+<tabTrigger>emp</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
+
