@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+
+<?php 
+if(\$${1:thing}Match == "Yes") { ?>
+<table class="table table-sm">
+<caption>${1:thing}</caption>
+<thead>
+<tr>
+	<th>Head</th>
+</tr>
+</thead>
+<tbody>
+<?php 
+foreach (\$${1:thing}s as \$${1:thing}) { ?>
+<tr>
+	<td><?php echo \$${1:thing}->getField('${2:field}'); ?></td>
+</tr>
+<?php } // close foreach ?>
+</tbody>
+</table>
+<?php } // close if match ?>
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+<tabTrigger>table</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
