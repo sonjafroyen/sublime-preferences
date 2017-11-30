@@ -4,7 +4,7 @@
 <?php 
 if(\$${1:thing}Match == "Yes") { ?>
 <table class="table table-sm">
-<caption>${1:thing}</caption>
+<caption>${1:thing}s</caption>
 <thead>
 <tr>
 	<th>Head</th>

@@ -7,9 +7,11 @@
 	[
 		"ColorPicker",
 		"Dimmed Color Scheme",
+		"LESS",
 		"Minify",
 		"Package Control",
 		"RegReplace",
+		"Semantic UI",
 		"SublimeLinter",
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-php",
