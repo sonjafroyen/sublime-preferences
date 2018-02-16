@@ -8,7 +8,7 @@ switch(\$response) {
 
 case 'delete':
 
-	\$${1:thing}Delete =& \$fm->newDeleteCommand('web_${1:thing}_delete', \$_POST['recid']);
+	\$${1:thing}Delete =& \$fm->newDeleteCommand('web_${1:thing}_delete', \$_POST['recID']);
 	\$${1:thing}Deleteresult = \$${1:thing}Delete->execute();
 	if (FileMaker::isError(\$${1:thing}Deleteresult)) {
 		\$error = "Error: " . \$${1:thing}Deleteresult->getMessage() . "\n";
@@ -17,9 +17,9 @@ case 'delete':
 
 break;
 
-case 'save':
+case 'edit':
 
-	\$${1:thing}Edit = & \$fm->newEditCommand('web_${1:thing}_edit', \$_POST['recid']);
+	\$${1:thing}Edit = & \$fm->newEditCommand('web_${1:thing}_edit', \$_POST['recID']);
 	\$${1:thing}Edit->setField('${2:field}', \$_POST['${3:criteria}']);
 	\$${1:thing}Edit->setField('rt_Modification', \$userName);
 	\$${1:thing}Edit->setField('rt_ModificationInternetID', \$userID);
