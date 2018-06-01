@@ -11,13 +11,16 @@
 		"Minify",
 		"Package Control",
 		"RegReplace",
+		"Scalex Documentation Search",
 		"Semantic UI",
 		"SublimeLinter",
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-php",
+		"SublimeLinter-xmllint",
 		"Theme - Soda",
 		"Themr",
 		"TidyTabs",
-		"W3CValidators"
+		"W3CValidators",
+		"WordCount"
 	]
 }
